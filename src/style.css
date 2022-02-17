@@ -8,6 +8,7 @@ body {
 }
 
 .todolist_container {
+    color: #5b5c5e;
     background-color: white;
     width: 80%;
     margin: auto;
@@ -22,7 +23,7 @@ body {
     line-height: 6vh;
 }
 
-.tasks * {
+.tasks *,.add_task * {
     height: 6vh;
 }
 
@@ -59,9 +60,12 @@ body {
     padding: 2%;
 }
 
-.tasks form i {
-    justify-self: end;
+.tasks label {
+    width: 80%;
+    text-align: start;
 }
+
+
 
 .clear {
     text-align: center;
@@ -70,11 +74,25 @@ body {
 }
 
 .add_task {
+    padding: 2%;
     display: flex;
     justify-content: space-between;
 }
 
-.add_task input {
-    border: none;
-    outline: none;
+.add_task_input, .add_task_button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
