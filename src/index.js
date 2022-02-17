@@ -1,6 +1,8 @@
 import _ from 'lodash';//eslint-disable-line
 import './style.css';
-
+import Todolist from './crud.js';
+const todolist = new Todolist();
+/*
 const todolist = [
   {
     description: 'exercice',
@@ -23,7 +25,7 @@ const todolist = [
     index: 3,
   },
 ];
-
+*/
 function displayToDoTasks(todolist, tasks) {
   tasks.innerHTML = '';
   // Lodash, now imported by this script
@@ -58,5 +60,4 @@ tasks.addEventListener('click', (e) => {
   dots.classList.remove('show');
   dots.classList.add('hide');
   trush.classList.add('show');
-  console.log('entered');
 });
