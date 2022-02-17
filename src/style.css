@@ -1,98 +1,99 @@
 * {
-    margin: 0%;
-    padding: 0%;
+  margin: 0%;
+  padding: 0%;
 }
+
 body {
-    background-color: #F6F8FA;
-    
+  background-color: #f6f8fa;
 }
 
 .todolist_container {
-    color: #5b5c5e;
-    background-color: white;
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10vh;
-    box-shadow: -3px 3px 8px rgb(202, 201, 200),3px 3px 8px rgb(202, 201, 200);
+  color: #5b5c5e;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  box-shadow: -3px 3px 8px rgb(202, 201, 200), 3px 3px 8px rgb(202, 201, 200);
 }
 
 .todolist_container * {
-    min-height:6vh;
-    line-height: 6vh;
+  min-height: 6vh;
+  line-height: 6vh;
 }
 
-.tasks *,.add_task * {
-    height: 6vh;
+.tasks *,
+.add_task * {
+  height: 6vh;
 }
 
-.todolist_container >*, .tasks > * {
-    border-bottom: 1px solid rgb(182, 181, 181);
+.todolist_container > *,
+.tasks > * {
+  border-bottom: 1px solid rgb(182, 181, 181);
 }
 
 .todolist_header {
-    display: flex;
-    padding: 2%;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  padding: 2%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .todolist_container i {
-    color: darkgray;
+  color: darkgray;
 }
 
 .tasks {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0%;
-    font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0%;
+  font-weight: 600;
 }
 
 .tasks form {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tasks li {
-    padding: 2%;
+  padding: 2%;
 }
 
 .tasks label {
-    width: 80%;
-    text-align: start;
+  width: 80%;
+  text-align: start;
 }
 
-
-
 .clear {
-    text-align: center;
-    background-color: #F6F8FA;
-    padding: 2%;
+  text-align: center;
+  background-color: #f6f8fa;
+  padding: 2%;
 }
 
 .add_task {
-    padding: 2%;
-    display: flex;
-    justify-content: space-between;
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.add_task_input, .add_task_button {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.add_task_input,
+.add_task_button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .show {
-    display: block;
+  display: block;
 }
