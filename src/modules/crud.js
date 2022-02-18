@@ -21,11 +21,4 @@ export default class Todolist {
     }
   }
 
-  getTasks() {
-    return this.tasks;
-  }
-
-  setTasks(tasks) {
-    this.tasks = tasks;
-  }
 }

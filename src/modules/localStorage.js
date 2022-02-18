@@ -1,11 +1,10 @@
-const setInputs = (bookCollection) => {
-  const booksArr = JSON.parse(localStorage.getItem('books'));
-  bookCollection.setBooks(booksArr);
+const setInputs = () => {
+  const Arr = JSON.parse(localStorage.getItem('todolist'));
+  return Arr;
 };
 
-const populateStorage = (bookCollection) => {
-  localStorage.setItem('books', JSON.stringify(bookCollection.getBooks()));
-  setInputs(bookCollection);
+const populateStorage = (collection) => {
+  localStorage.setItem('todolist', JSON.stringify(collection));
 };
 
 const storageAvailable = (type) => {
