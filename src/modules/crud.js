@@ -13,13 +13,16 @@ export default class Todolist {
   update(description, index) {
     this.tasks[index].description = description;
   }
-
+  updateIdexes(){
+    var i=1;
+    this.tasks.map((task)=>{
+      task.index=i;
+      i+=1;
+    })
+  }
   remove(index) {
     this.tasks.splice(index-1, 1);
     console.log(index);
-    for (var i = index; i < this.tasks.length; i += 1) {
-      this.tasks[i].index = (this.tasks[i].index - 1);//eslint-disable-line
-      console.log(i,index);
-    }
+    this.updateIdexes();
   }
 }
