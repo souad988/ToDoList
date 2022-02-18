@@ -10,7 +10,7 @@ body {
 .todolist_container {
   color: #5b5c5e;
   background-color: white;
-  width: 80%;
+  width: 60%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -62,8 +62,8 @@ body {
   padding: 2%;
 }
 
-.tasks label {
-  width: 80%;
+.description {
+  width: 85%;
   text-align: start;
 }
 
@@ -80,7 +80,8 @@ body {
 }
 
 .add_task_input,
-.add_task_button {
+.add_task_button,
+.description {
   background: none;
   color: inherit;
   border: none;
