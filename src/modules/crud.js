@@ -13,15 +13,18 @@ export default class Todolist {
   update(description, index) {
     this.tasks[index].description = description;
   }
-  updateIdexes(){
-    var i=1;
-    this.tasks.map((task)=>{
-      task.index=i;
-      i+=1;
-    })
+
+  updateIdexes() {
+    let i = 1;
+    this.tasks.map((task) => {
+      task.index = i;
+      i += 1;
+      return task;
+    });
   }
+
   remove(index) {
-    this.tasks.splice(index-1, 1);
+    this.tasks.splice(index - 1, 1);
     console.log(index);
     this.updateIdexes();
   }
