@@ -15,10 +15,11 @@ export default class Todolist {
   }
 
   remove(index) {
-    this.tasks.splice(index, 1);
-    for (let i = index; i < this.tasks.length; i += 1) {
+    this.tasks.splice(index-1, 1);
+    console.log(index);
+    for (var i = index; i < this.tasks.length; i += 1) {
       this.tasks[i].index = (this.tasks[i].index - 1);//eslint-disable-line
-
+      console.log(i,index);
     }
   }
 }
