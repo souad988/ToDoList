@@ -28,7 +28,7 @@ function controleDeleteIcons(descriptionInputs) {
         trushIcon.classList.add('hide');
       });
 
-      console.log('from event listner!!!', e.path[1].querySelector('.fa-trash-alt'));
+     // console.log('from event listner!!!', e.path[1].querySelector('.fa-trash-alt'));
 
       const dots = e.path[1].querySelector('.fa-ellipsis-v');
       const trush = e.path[1].querySelector('.fa-trash-alt');
