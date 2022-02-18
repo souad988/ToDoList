@@ -6,7 +6,7 @@ export default class Todolist {
   }
 
   add(description) {
-    const newTask = new Task(description, this.tasks.length);
+    const newTask = new Task(description, this.tasks.length+1);
     this.tasks.push(newTask);
   }
 
