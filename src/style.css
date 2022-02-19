@@ -98,3 +98,8 @@ body {
 .show {
   display: block;
 }
+
+.highlight {
+  text-decoration: line-through;
+  color: rgb(161, 161, 161);
+}

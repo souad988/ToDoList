@@ -45,14 +45,24 @@ function displayToDoTasks(tasksContainer) {
   // Lodash, now imported by this script
   todolist.tasks.forEach((task) => {
     tasksContainer.innerHTML += `<li class="task_row"><form class="task">
-    <input class="checkbox" type="checkbox" id="${task.index}" name="task" value="task">
-    <input class="description" value="${task.description}"/>
-    <i class="fas fa-trash-alt hide" ></i>
-    <i class="fas fa-ellipsis-v show"></i>
+    <input class="checkbox" type="checkbox" id="${task.index}" name="task" value="task"${console.log(task.completed)} >
+    <input class="description ${task.completed ? 'highlight' : ''}" id="desc${task.index}" value="${task.description}"/>
+    <i class="fas fa-trash-alt hide" id="trush${task.index}"></i>
+    <i class="fas fa-ellipsis-v show" id="dots${task.index}"></i>
     </form></li>`;
   });
   const removeBtns = document.querySelectorAll('.fa-trash-alt');
-
+  const checkboxes = document.querySelectorAll('.checkbox');
+  checkboxes.forEach((check) => {
+    check.checked = todolist.tasks[parseInt(check.id, 10) - 1].completed;
+    check.addEventListener('click', () => {
+      const id = check.id.match('\d*$').input;//eslint-disable-line
+      todolist.checkCompleted(id);
+      console.log(document.getElementById(`desc${id}`));
+      document.getElementById(`desc${id}`).classList.toggle('highlight');
+      populateStorage(todolist.tasks);
+    });
+  });
   removeBtns.forEach((removeBtn) => {
     if (removeBtn !== null) {
       removeBtn.addEventListener('click', (e) => {
@@ -75,7 +85,7 @@ const tasksContainer = document.querySelector('.tasks');
 const addTaskForm = document.querySelector('.add_task');
 const addTaskInput = document.querySelector('.add_task_input');
 const addTaskButton = document.querySelector('.add_task_button');
-
+const clearCompleted = document.querySelector('.clear');
 displayToDoTasks(tasksContainer);
 
 addTaskForm.addEventListener('submit', (e) => {
@@ -89,4 +99,10 @@ addTaskButton.addEventListener('click', (e) => {
   populateStorage(todolist.tasks);
   displayToDoTasks(tasksContainer);
   addTaskInput.value = '';
+});
+
+clearCompleted.addEventListener('click', () => {
+  todolist.removeCompleted();
+  populateStorage(todolist.tasks);
+  displayToDoTasks(tasksContainer);
 });

@@ -11,7 +11,11 @@ export default class Todolist {
   }
 
   update(description, index) {
-    this.tasks[index].description = description;
+    this.tasks[index - 1].description = description;
+  }
+
+  checkCompleted(index) {
+    this.tasks[index - 1].completed = !this.tasks[index - 1].completed;
   }
 
   updateIdexes() {
@@ -25,7 +29,11 @@ export default class Todolist {
 
   remove(index) {
     this.tasks.splice(index - 1, 1);
-    console.log(index);
+    this.updateIdexes();
+  }
+
+  removeCompleted() {
+    this.tasks = this.tasks.filter((task) => task.completed === false);
     this.updateIdexes();
   }
 }
