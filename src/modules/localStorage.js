@@ -3,8 +3,8 @@ const setInputs = () => {
   return Arr;
 };
 
-const populateStorage = (collection) => {
-  localStorage.setItem('todolist', JSON.stringify(collection));
+const populateStorage = (todolist) => {
+  localStorage.setItem('todolist', JSON.stringify(todolist));
 };
 
 const storageAvailable = (type) => {
