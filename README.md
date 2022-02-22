@@ -2,6 +2,9 @@
 
 Javascript App to display a daily todolist 
 
+![CPT2202221342-612x546](https://user-images.githubusercontent.com/59707859/155134746-691be202-5917-4ef5-b377-6d77d7470ec8.gif)
+
+
 ## Built With
 
 -HTML & Javascript
