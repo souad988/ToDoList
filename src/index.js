@@ -1,4 +1,4 @@
-import _ from 'lodash';//eslint-disable-line
+import _ from 'lodash'; //eslint-disable-line
 import './style.css';
 import { storageAvailable, populateStorage, setInputs } from './modules/localStorage.js';
 import Todolist from './modules/crud.js';
@@ -56,7 +56,7 @@ function displayToDoTasks(tasksContainer) {
   checkboxes.forEach((check) => {
     check.checked = todolist.tasks[parseInt(check.id, 10) - 1].completed;
     check.addEventListener('click', () => {
-      const id = check.id.match('\d*$').input;//eslint-disable-line
+      const id = check.id.match('d*$').input; //eslint-disable-line
       todolist.checkCompleted(id);
       console.log(document.getElementById(`desc${id}`));
       document.getElementById(`desc${id}`).classList.toggle('highlight');
@@ -74,10 +74,12 @@ function displayToDoTasks(tasksContainer) {
     }
   });
   const descriptionInputs = document.querySelectorAll('.description');
-  descriptionInputs.forEach((description) => description.addEventListener(('change'), (e) => {
-    todolist.update(e.target.value, e.path[1].querySelector('.checkbox').id);
-    populateStorage(todolist.tasks);
-  }));
+  descriptionInputs.forEach((description) => {
+    description.addEventListener('change', (e) => {
+      todolist.update(e.target.value, e.path[1].querySelector('.checkbox').id);
+      populateStorage(todolist.tasks);
+    });
+  });
   controleDeleteIcons(descriptionInputs);
 }
 
