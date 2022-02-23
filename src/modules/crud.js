@@ -6,8 +6,13 @@ export default class Todolist {
   }
 
   add(description) {
-    const newTask = new Task(description, this.tasks.length + 1);
-    this.tasks.push(newTask);
+    if(description===undefined){
+      throw new Error("you need to add a description");
+    }else {
+      const newTask = new Task(description, this.tasks.length + 1);
+      this.tasks.push(newTask);
+      return this.tasks;
+    }
   }
 
   update(description, index) {
