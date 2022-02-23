@@ -74,12 +74,12 @@ function displayToDoTasks(tasksContainer) {
     }
   });
   const descriptionInputs = document.querySelectorAll('.description');
-  descriptionInputs.forEach((description) =>
+  descriptionInputs.forEach((description) => {
     description.addEventListener('change', (e) => {
       todolist.update(e.target.value, e.path[1].querySelector('.checkbox').id);
       populateStorage(todolist.tasks);
-    })
-  );
+    });
+  });
   controleDeleteIcons(descriptionInputs);
 }
 
