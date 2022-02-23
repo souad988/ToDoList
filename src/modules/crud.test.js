@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import Todolist from './crud';
 
 const myTodolist = new Todolist();
