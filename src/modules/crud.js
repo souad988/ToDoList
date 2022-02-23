@@ -6,9 +6,9 @@ export default class Todolist {
   }
 
   add(description) {
-    if(description===undefined){
-      throw new Error("you need to add a description");
-    }else {
+    if (description === undefined) {
+      throw new Error('you need to add a description');
+    } else {
       const newTask = new Task(description, this.tasks.length + 1);
       this.tasks.push(newTask);
       return this.tasks;
@@ -33,8 +33,16 @@ export default class Todolist {
   }
 
   remove(index) {
-    this.tasks.splice(index - 1, 1);
-    this.updateIdexes();
+    if (index === undefined) {
+      throw new Error('index not provided!');
+    }
+    if (index < 0 || index > this.tasks.length) {
+      throw new Error('invalid index!');
+    } else {
+      this.tasks.splice(index - 1, 1);
+      this.updateIdexes();
+      return this.tasks;
+    }
   }
 
   removeCompleted() {

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1645626774183" clover="3.2.0">
+  <project timestamp="1645626774183" name="All files">
+    <metrics statements="25" coveredstatements="21" conditionals="10" coveredconditionals="8" methods="10" coveredmethods="6" elements="45" coveredelements="35" complexity="0" loc="25" ncloc="25" packages="1" files="2" classes="2"/>
+    <file name="crud.js" path="/home/ismailco/Desktop/Microverse/module2/week3/ToDoList/src/modules/crud.js">
+      <metrics statements="22" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="9" coveredmethods="5"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="9" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="29" count="5" type="stmt"/>
+      <line num="30" count="5" type="stmt"/>
+      <line num="31" count="5" type="stmt"/>
+      <line num="36" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="39" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="42" count="2" type="stmt"/>
+      <line num="43" count="2" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+    </file>
+    <file name="task.js" path="/home/ismailco/Desktop/Microverse/module2/week3/ToDoList/src/modules/task.js">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="5" count="4" type="stmt"/>
+    </file>
+  </project>
+</coverage>
