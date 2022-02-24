@@ -5,6 +5,7 @@
 import Todolist from './modules/crud.js';
 import { populateStorage, setInputs } from './modules/localStorage.js';
 import LocalStorageMock from '../__mocks__/localstorage.js';
+
 global.localStorage = new LocalStorageMock();
 
 const myTodolist = new Todolist();
@@ -73,20 +74,19 @@ describe('Test check status', () => {
 });
 
 describe('Test clear all completed ', () => {
-    test('Should not remove uncompleted tasks ', () => {
-        myTodolist.add("do exercice");
-        myTodolist.add('learn js');
-        myTodolist.removeCompleted();
-        populateStorage(myTodolist.tasks);
-        setInputs().forEach(task=>expect(task.completed).toBe(false));    
-      });
-  
-    test('Should remove all checked tasks ', () => {
-        //edit all tasks as completed
-        myTodolist.tasks.forEach(task => editTaskStatus(task.index, myTodolist));
-        myTodolist.removeCompleted();
-        populateStorage(myTodolist.tasks);
-        expect(setInputs().length).toBe(0);
+  test('Should not remove uncompleted tasks ', () => {
+    myTodolist.add('do exercice');
+    myTodolist.add('learn js');
+    myTodolist.removeCompleted();
+    populateStorage(myTodolist.tasks);
+    setInputs().forEach((task) => expect(task.completed).toBe(false));
   });
 
+  test('Should remove all checked tasks ', () => {
+    // edit all tasks as completed
+    myTodolist.tasks.forEach((task) => editTaskStatus(task.index, myTodolist));
+    myTodolist.removeCompleted();
+    populateStorage(myTodolist.tasks);
+    expect(setInputs().length).toBe(0);
+  });
 });
