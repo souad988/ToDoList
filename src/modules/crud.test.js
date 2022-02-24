@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import Todolist from './crud';
+import Todolist from './crud.js';
 
 const myTodolist = new Todolist();
 
@@ -51,14 +51,13 @@ describe('Remove task correctly', () => {
 
 describe('Update task correctly', () => {
   test('description for second task should be do exercice', () => {
-    myTodolist.update('do exercice',2);
+    myTodolist.update('do exercice', 2);
     expect(myTodolist.tasks[1].description).toBe('do exercice');
   });
-  
+
   test('if description is not provided should throw error', () => {
     expect(() => {
-      myTodolist.update('',2);
+      myTodolist.update('', 2);
     }).toThrow('description not provided!');
   });
 });
-
