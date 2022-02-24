@@ -66,29 +66,27 @@ describe('Test check status', () => {
     editTaskStatus(1, myTodolist);
     expect(setInputs()[0].completed).toBe(true);
   });
+  test('Check if the Task is not checked (have value of false)', () => {
+    editTaskStatus(1, myTodolist);
+    expect(setInputs()[0].completed).toBe(false);
+  });
 });
 
-describe('Test clear all button', () => {
-  test('Should not remove task if checked', () => {
-    myTodolist.add(task.description);
-    myTodolist.add(task.description);
-    myTodolist.removeCompleted();
-    populateStorage(myTodolist.tasks);
-    if (myTodolist.tasks.length === 0) {
-      Body.innerHTML = '';
-    }
-    expect(Body.innerHTML).toBe('<li>desc</li>');
+describe('Test clear all completed ', () => {
+    test('Should not remove uncompleted tasks ', () => {
+        myTodolist.add("do exercice");
+        myTodolist.add('learn js');
+        myTodolist.removeCompleted();
+        populateStorage(myTodolist.tasks);
+        setInputs().forEach(task=>expect(task.completed).toBe(false));    
+      });
+  
+    test('Should remove all checked tasks ', () => {
+        //edit all tasks as completed
+        myTodolist.tasks.forEach(task => editTaskStatus(task.index, myTodolist));
+        myTodolist.removeCompleted();
+        populateStorage(myTodolist.tasks);
+        expect(setInputs().length).toBe(0);
   });
 
-  test('Should remove all the tasks if not checked', () => {
-    editTaskStatus(1, myTodolist);
-    myTodolist.add(task.description);
-    // myTodolist.add(task.description);
-    myTodolist.removeCompleted();
-    populateStorage(myTodolist.tasks);
-    if (myTodolist.tasks.length === 0) {
-      Body.innerHTML = '';
-    }
-    expect(Body.innerHTML).toBe('');
-  });
 });
