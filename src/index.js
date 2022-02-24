@@ -40,6 +40,16 @@ function controleDeleteIcons(descriptionInputs) {
   });
 }
 
+const editTaskDescription = (desc, id, todolist) => {
+  todolist.update(desc, id);
+  populateStorage(todolist.tasks);
+};
+
+const editTaskStatus = (id, todolist) => {
+  todolist.checkCompleted(id);
+  populateStorage(todolist.tasks);
+};
+
 function displayToDoTasks(tasksContainer) {
   tasksContainer.innerHTML = '';
   // Lodash, now imported by this script
@@ -105,13 +115,3 @@ clearCompleted.addEventListener('click', () => {
   populateStorage(todolist.tasks);
   displayToDoTasks(tasksContainer);
 });
-
-const editTaskDescription = (desc, id, todolist) => {
-  todolist.update(desc, id);
-  populateStorage(todolist.tasks);
-};
-
-const editTaskStatus = (id, todolist) => {
-  todolist.checkCompleted(id);
-  populateStorage(todolist.tasks);
-};

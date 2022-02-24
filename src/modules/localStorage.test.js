@@ -1,7 +1,7 @@
 import { populateStorage, setInputs } from './localStorage.js';
 import LocalStorageMock from '../../__mocks__/localstorage.js';
-const todo = 'add';
 
+const todo = 'add';
 
 global.localStorage = new LocalStorageMock();
 

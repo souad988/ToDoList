@@ -19,7 +19,7 @@ export default class Todolist {
     if (description === '') {
       throw new Error('description not provided!');
     } else {
-    this.tasks[index - 1].description = description;
+      this.tasks[index - 1].description = description;
     }
   }
 
