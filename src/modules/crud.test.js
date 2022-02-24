@@ -15,7 +15,7 @@ describe('add task correctly', () => {
     expect(myTodolist.add('todo task')[0].description).toBe('todo task');
   });
 
-  test('tasks length to be 1', () => {
+  test('tasks length to be 2', () => {
     expect(myTodolist.add('todo task')).toHaveLength(2);
   });
 
@@ -48,3 +48,17 @@ describe('Remove task correctly', () => {
     expect(myTodolist.remove(myTodolist.tasks.length)[myTodolist.tasks.length]).toBe(undefined);
   });
 });
+
+describe('Update task correctly', () => {
+  test('description for second task should be do exercice', () => {
+    myTodolist.update('do exercice',2);
+    expect(myTodolist.tasks[1].description).toBe('do exercice');
+  });
+  
+  test('if description is not provided should throw error', () => {
+    expect(() => {
+      myTodolist.update('',2);
+    }).toThrow('description not provided!');
+  });
+});
+

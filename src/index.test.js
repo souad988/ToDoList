@@ -3,6 +3,10 @@
  */
 
 import Todolist from './modules/crud.js';
+import { populateStorage, setInputs } from './modules/localStorage.js';
+import LocalStorageMock from '../__mocks__/localstorage.js';
+global.localStorage = new LocalStorageMock();
+
 
 const myTodolist = new Todolist();
 const Body = document.body;
@@ -15,6 +19,7 @@ const task = {
 
 test('add One Task to DOM using add() func', () => {
   myTodolist.add(task.description);
+  
   myTodolist.tasks.forEach(() => {
     Body.innerHTML += '<li></li>';
   });
@@ -28,3 +33,15 @@ test('Remove One Task DOM using remove() func', () => {
   }
   expect(Body.innerHTML).toBe('');
 });
+
+//
+const editTaskDescription = (desc,id,todolist)=>{
+    todolist.update(desc,id);
+    populateStorage(todolist.tasks);
+}
+
+test('Edite a Tasks description and check localstorage', () => {
+    myTodolist.add(task.description);
+    editTaskDescription('desc',1,myTodolist);
+    expect(setInputs()[0].description).toBe('desc');
+  });
