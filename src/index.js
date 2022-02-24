@@ -57,7 +57,7 @@ function displayToDoTasks(tasksContainer) {
     check.checked = todolist.tasks[parseInt(check.id, 10) - 1].completed;
     check.addEventListener('click', () => {
       const id = check.id.match('d*$').input; //eslint-disable-line
-      editTaskStatus(id,todolist);
+      editTaskStatus(id, todolist);
       document.getElementById(`desc${id}`).classList.toggle('highlight');
     });
   });
@@ -74,7 +74,7 @@ function displayToDoTasks(tasksContainer) {
   const descriptionInputs = document.querySelectorAll('.description');
   descriptionInputs.forEach((description) => {
     description.addEventListener('change', (e) => {
-      editTaskDescription(e.target.value,e.path[1].querySelector('.checkbox').id,todolist);
+      editTaskDescription(e.target.value, e.path[1].querySelector('.checkbox').id, todolist);
     });
   });
   controleDeleteIcons(descriptionInputs);
@@ -106,12 +106,12 @@ clearCompleted.addEventListener('click', () => {
   displayToDoTasks(tasksContainer);
 });
 
-const editTaskDescription = (desc,id,todolist)=>{
-  todolist.update(desc,id);
+const editTaskDescription = (desc, id, todolist) => {
+  todolist.update(desc, id);
   populateStorage(todolist.tasks);
-}
+};
 
-const editTaskStatus=(id,todolist)=>{
-      todolist.checkCompleted(id);
-      populateStorage(todolist.tasks);
-}
+const editTaskStatus = (id, todolist) => {
+  todolist.checkCompleted(id);
+  populateStorage(todolist.tasks);
+};
