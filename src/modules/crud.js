@@ -16,7 +16,11 @@ export default class Todolist {
   }
 
   update(description, index) {
-    this.tasks[index - 1].description = description;
+    if (description === '') {
+      throw new Error('description not provided!');
+    } else {
+      this.tasks[index - 1].description = description;
+    }
   }
 
   checkCompleted(index) {
