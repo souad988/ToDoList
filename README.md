@@ -26,7 +26,7 @@ Run `npx eslint .` to test for javascript linting check
 The app is deployed using Github Pages. You can view it by clicking the [Live Demo Link](#Live-Demo) below.
 ### Live demo
 
-[gitpages](https://souad988.github.io/ToDoList/)
+[todolist](https://souad988.github.io/ToDoList/dist/)
 
 ## Authors
 
