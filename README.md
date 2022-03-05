@@ -1,6 +1,6 @@
 # ToDoList
 
-Javascript App to display a daily todolist 
+this project is a web application where users can add new tasks to their todolist, mark a task as done, update it or remove it, and can also clear all completed tasks in one click , this project is built using html/css and javascript. 
 
 ![CPT2202221342-612x546](https://user-images.githubusercontent.com/59707859/155134746-691be202-5917-4ef5-b377-6d77d7470ec8.gif)
 
